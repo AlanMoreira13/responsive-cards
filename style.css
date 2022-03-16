@@ -1,136 +1,131 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Hubballi", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hubballi", sans-serif;
 }
 
 body {
-    background-color: #f6f9ff;
-    height: 100vh;
-    width: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: #434343;
+  background-color: #161623;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cards {
-    display: flex;
-    padding: 32px;
+.container {
+  position: relative;
+  max-width: 90%;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 2rem;
 }
 
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    max-height: 468px;
-    margin-left: 32px;
+.container .card {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  border-radius: 20px;
+  max-height: 468px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.card:nth-child(1) {
-    margin-left: 0;
+.container .card .card-content {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
 }
 
-.cards {
-    display: flex;
-    padding: 32px;
+.container .card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
-.wrapper {
-    width: 64px;
-    height: 64px;
+.container-img img {
+  width: 64px;
+  height: 64px;
 }
 
-img{
-    width: 100%;
+.container .card h3 {
+  font-size: 100%;
+  margin: 16px 0;
 }
 
-.follow img {
-    width: 115%;
+.container .card p {
+  max-width: 480px;
+  font-size: 80%;
+  margin-bottom: 16px;
 }
 
-h3 {
-    font-size: 100%;
-    margin: 16px 0;
-}
-
-span {
-    max-width: 480px;
-    font-size: 80%;
-    margin-bottom: 16px;
-}
-
-button {
-    padding: .5rem 1rem;
-    text-transform: uppercase;
-    border-radius: 32px;
-    border: none;
-    cursor: pointer;
-    font-size: 80%;
-    font-weight: bold;
-}
-button {
-    color: #eee;
+.container .card button {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  font-size: 80%;
+  color: #fff;
+  font-weight: bold;
 }
 
 .contact button {
-    background: #56ab2f;
-    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); 
-    background: linear-gradient(to right, #a8e063, #56ab2f)
-
+  background: #56ab2f;
+  background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);
+  background: linear-gradient(to right, #a8e063, #56ab2f);
 }
 
 .follow button {
-    background: #1F1C2C; 
-    background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C); 
-    background: linear-gradient(to right, #928DAB, #1F1C2C);
+  background: #1f1c2c;
+  background: -webkit-linear-gradient(to right, #928dab, #1f1c2c);
+  background: linear-gradient(to right, #928dab, #1f1c2c);
 }
 
 .add button {
-    background: #1488CC;  
-    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  
-    background: linear-gradient(to right, #2B32B2, #1488CC);
+  background: #1488cc;
+  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+  background: linear-gradient(to right, #2b32b2, #1488cc);
 }
 
-.add{
-    box-shadow: 20px 20px 50px -30px #3c44db;
+.add {
+  box-shadow: 10px 10px 30px -5px #3c44db;
 }
 
 .follow {
-    box-shadow: 20px 20px 50px -30px #050505;
+  box-shadow: 10px 10px 30px -5px #fff2f2;
 }
 
 .contact {
-    box-shadow: 20px 20px 50px -30px greenyellow;
+  box-shadow: 10px 10px 30px -5px greenyellow;
 }
 
 @media screen and (max-width: 720px) {
-.cards {
+  .container {
     flex-direction: column;
-}
-.card {
-    margin-left: 0;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  .container .card {
     margin-bottom: 32px;
-    
-}
+  }
 
-
-.card:nth-child(3) {
+  .card:nth-child(3) {
     margin-bottom: 0;
-}
+  }
 
-.card button {
+  .card button {
     font-size: 70%;
-    
-}
-
-
+  }
 }
